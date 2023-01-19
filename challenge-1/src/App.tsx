@@ -1,3 +1,6 @@
+import { InputBorderRadius } from "./components/InputBorderRadius";
+import "./App.css";
+
 export const App = () => {
   return (
     <div>
@@ -6,21 +9,15 @@ export const App = () => {
         <span>border-radius: 50px 0 0 0;</span>
         <div>
           <div>
-            <label>Top Left</label>
-            <input type="text" />
-
-            <label>Top Right</label>
-            <input type="text" />
+            <InputBorderRadius text="Top Left" />
+            <InputBorderRadius text="Top Right" />
           </div>
 
           <div></div>
 
           <div>
-            <label>Bottom Left</label>
-            <input type="text" />
-
-            <label>Bottom Right</label>
-            <input type="text" />
+            <InputBorderRadius text="Bottom Left" />
+            <InputBorderRadius text="Bottom Right" />
           </div>
         </div>
       </div>
