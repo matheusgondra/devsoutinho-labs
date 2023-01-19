@@ -7,7 +7,7 @@ body {
 
 .container {
   margin: 0 auto;
-  margin-top: 105px;
+  padding-top: 105px;
   height: 100vh;
   font-family: "Open sans";
   color: #FFE8D9;
@@ -60,4 +60,14 @@ body {
   height: 286px;
   background-color: #FF9466;
   margin: 12px 0;
+}
+
+@media (min-width: 1024px) {
+  .title, .subtitle {
+    font-size: 72px;
+  }
+
+  .previewer_container {
+    padding-bottom: 0;
+  }
 }
