@@ -1,12 +1,14 @@
+import "./styles.css";
+
 interface InputBorderRadiusProps {
     text: string;
 }
 
 export const InputBorderRadius = ({ text }: InputBorderRadiusProps) => {
     return (
-        <label>
+        <label className="border-radius_label">
             {text}
-            <input type="text" />
+            <input className="border-radius_input" type="text" />
         </label>
     );
 }
