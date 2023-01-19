@@ -3,8 +3,9 @@ import "./App.css";
 
 export const App = () => {
   return (
-    <div>
-      <h1>[Previwer] border-radius:</h1>
+    <div className="container">
+      <h1 className="title">[Previwer]</h1>
+      <h2 className="subtitle">border-radius:</h2>
       <div>
         <span>border-radius: 50px 0 0 0;</span>
         <div>
