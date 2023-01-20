@@ -4,7 +4,7 @@ import "./styles.css";
 interface InputBorderRadiusProps {
     text: string;
     handleChange: (e: ChangeEvent<HTMLInputElement>, direction: string) => void;
-    direction: string;
+    direction: "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
 }
 
 export const InputBorderRadius = ({ text, handleChange, direction }: InputBorderRadiusProps) => {
