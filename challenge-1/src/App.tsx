@@ -7,6 +7,7 @@ export const App = () => {
   const [topRight, setTopRight] = useState("");
   const [bottomLeft, setBottomLeft] = useState("");
   const [bottomRight, setBottomRight] = useState("");
+  const [output, setOutput] = useState("0 0 0 0");
 
   const previewRef = useRef<HTMLDivElement>(null);
 
@@ -25,12 +26,19 @@ export const App = () => {
     }
   }
 
+  const handleOutput = () => {
+    console.log(topLeft)
+    const output = `${topLeft  ? `${topLeft}px`: "0"} ${topRight  ? `${topRight}px`: "0"} ${bottomLeft  ? `${bottomLeft}px`: "0"} ${bottomRight  ? `${bottomRight}px`: "0"}`;
+    setOutput(output);
+  }
+
   useEffect(() => {
     if(previewRef.current){
       previewRef.current.style.borderTopLeftRadius = `${topLeft}px`;
       previewRef.current.style.borderTopRightRadius = `${topRight}px`;
       previewRef.current.style.borderBottomLeftRadius = `${bottomLeft}px`;
       previewRef.current.style.borderBottomRightRadius = `${bottomRight}px`;
+      handleOutput();
     }
   }, [topLeft, topRight, bottomLeft, bottomRight]);
 
@@ -39,7 +47,7 @@ export const App = () => {
       <h1 className="title">[Previewer]</h1>
       <h2 className="subtitle">border-radius:</h2>
       <div className="previewer_container">
-        <span className="previewer_output">border-radius: 50px 0 0 0;</span>
+        <span className="previewer_output">border-radius: {output};</span>
 
         <div className="previewer_input-container">
           <InputBorderRadius handleChange={handleBorderRadius} direction="topLeft" text="Top Left" />
