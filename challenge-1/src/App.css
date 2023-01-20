@@ -42,10 +42,11 @@ body {
   display: block;
   color: #FFF;
   font-family: 'Ubuntu Mono', monospace;
+  text-align: left;
   line-height: 24px;
   background-color: #626262;
-  padding: 14px 63px 13px 15px;
-  height: 51px;
+  padding: 14px 0 13px 15px;
+  min-height: 51px;
   border-radius: 6px;
   margin-bottom: 28px;
 }
