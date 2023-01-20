@@ -49,6 +49,7 @@ body {
   min-height: 51px;
   border-radius: 6px;
   margin-bottom: 28px;
+  cursor: pointer;
 }
 
 .previewer_input-container {

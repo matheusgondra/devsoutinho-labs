@@ -1,6 +1,6 @@
 import { InputBorderRadius } from "./components/InputBorderRadius";
 import "./App.css";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from "react";
 
 export const App = () => {
   const [topLeft, setTopLeft] = useState("");
@@ -10,6 +10,7 @@ export const App = () => {
   const [output, setOutput] = useState("0 0 0 0");
 
   const previewRef = useRef<HTMLDivElement>(null);
+  const outputRef = useRef<HTMLSpanElement>(null);
 
   const handleBorderRadius = (e: ChangeEvent<HTMLInputElement>, direction: string) => {
     const value = e.target.value;
@@ -32,6 +33,13 @@ export const App = () => {
     setOutput(output);
   }
 
+  const handleCopyCode = (e: MouseEvent<HTMLSpanElement>) => {
+    if(outputRef.current) {
+      navigator.clipboard.writeText(outputRef.current.innerText);
+      alert("Copiado com sucesso!");
+    }
+  }
+
   useEffect(() => {
     if(previewRef.current){
       previewRef.current.style.borderTopLeftRadius = `${topLeft}px`;
@@ -47,7 +55,7 @@ export const App = () => {
       <h1 className="title">[Previewer]</h1>
       <h2 className="subtitle">border-radius:</h2>
       <div className="previewer_container">
-        <span className="previewer_output">border-radius: {output};</span>
+        <span onClick={handleCopyCode} ref={outputRef} className="previewer_output">border-radius: {output};</span>
 
         <div className="previewer_input-container">
           <InputBorderRadius handleChange={handleBorderRadius} direction="topLeft" text="Top Left" />
