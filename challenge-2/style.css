@@ -40,3 +40,27 @@ div {
     clip-path: circle();
     background-color: red;
 }
+
+.brasil {
+    background-color: green;
+}
+
+.brasil::before {
+    content: "";
+    background-color: yellow;
+    width: 300px;
+    height: 180px;
+    top: calc(50% - 180px / 2);
+    left: calc(50% - 300px / 2);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.brasil::after {
+    content: "";
+    background-color: blue;
+    clip-path: circle();
+    width: 115px;
+    height: 115px;
+    top: calc(50% - 115px/2);
+    left: calc(50% - 115px/2);
+}
