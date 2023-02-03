@@ -64,3 +64,36 @@ div {
     top: calc(50% - 115px/2);
     left: calc(50% - 115px/2);
 }
+
+.chile {
+    background: linear-gradient(0deg, red 50%, white 50%);
+}
+
+.chile::before {
+    content: "";
+    background-color: blue;
+    width: 33.33%;
+    height: calc(255px/2);
+    top: 0;
+    left: 0;
+}
+
+.chile::after {
+    --point-one: 50% 0%;
+    --point-two: 61% 35%;
+    --point-three: 98% 35%;
+    --point-four: 68% 57%;
+    --point-five: 79% 91%;
+    --point-six: 50% 70%;
+    --point-seven: 21% 91%;
+    --point-eight: 32% 57%;
+    --point-nine: 2% 35%;
+    --point-ten: 39% 35%;
+    content: "";
+    background-color: white;
+    top: 11%;
+    left: 7%;
+    width: 71px;
+    height: 71px;
+    clip-path: polygon(var(--point-one), var(--point-two), var(--point-three), var(--point-four), var(--point-five), var(--point-six), var(--point-seven), var(--point-eight), var(--point-nine), var(--point-ten));
+}
