@@ -10,6 +10,12 @@
     position: absolute;
 }
 
+*::after,
+*::before,
+div {
+    aspect-ratio: 1/1;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -96,4 +102,37 @@ div {
     width: 71px;
     height: 71px;
     clip-path: polygon(var(--point-one), var(--point-two), var(--point-three), var(--point-four), var(--point-five), var(--point-six), var(--point-seven), var(--point-eight), var(--point-nine), var(--point-ten));
+}
+
+@media screen and (max-width: 425px) {
+    div {
+        width: 300px;
+        height: 155px;
+    }
+
+    .brasil::before {
+        width: 200px;
+        height: 100px;
+        top: calc(50% - 100px / 2);
+        left: calc(50% - 200px / 2);
+    }
+
+    .brasil::after {
+        width: 55px;
+        height: 55px;
+        top: calc(50% - 55px/2);
+        left: calc(50% - 55px/2);
+    }
+
+    .chile::before {
+        width: 33.33%;
+        height: calc(155px/2);
+    }
+
+    .chile::after {
+        top: 10%;
+        left: 8.5%;
+        width: 51px;
+        height: 51px;
+    }
 }
