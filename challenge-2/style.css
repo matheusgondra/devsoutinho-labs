@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after,
+*::before {
+    display: block;
+    position: absolute;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+div {
+    border: 1px solid #DDDDDD;
+    width: 400px;
+    height: 255px;
+    position: relative;
+}
+
+.japao {
+    background-color: white;
+
+}
+
+.japao::after {
+    content: "";
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    clip-path: circle();
+    background-color: red;
+}
